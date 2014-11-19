@@ -1,0 +1,15 @@
+{
+  "name": "tessel2web",
+  "version": "0.0.1",
+  "description": "Sample code for tessel, web server and a web socket",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Amir Lazarovich",
+  "license": "ISC",
+  "dependencies": {
+    "nodejs-websocket": "^1.0.0",
+    "tiny-router": "^0.1.3"
+  }
+}

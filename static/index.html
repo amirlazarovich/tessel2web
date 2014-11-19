@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Tessel - Web</title>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"> </script>
+    <style>
+      body {
+        padding: 10px;
+        text-align: center;
+      }
+
+      section {
+        margin-bottom: 10px;
+      }
+    </style>
+    <script type="text/javascript">
+        $(function() {
+            var socket = new WebSocket("ws://" + document.domain + ":8001");
+            var label = $('#text');
+            socket.onmessage = function(msg) {
+                label.text(msg.data);
+            };
+
+            $('button').click(function() {
+                socket.send(JSON.stringify({"led": this.value}));
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <section>
+        <button value="0">LED 1</button>
+        <button value="1">LED 2</button>
+    </section>
+    
+    <section>
+        <label>Echo from board: <span id="text"></span></label>
+    <section>
+</body>
+
+</html>
