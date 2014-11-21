@@ -14,5 +14,5 @@ tessel wifi -n [WIFI_NAME] -p [WIFI_PASSWORD]
 
 ### Example
 ```javascript 
-tessel run app
+tessel run app.js
 ```
